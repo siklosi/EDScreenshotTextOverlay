@@ -52,6 +52,6 @@ for file in list_of_files:
             imageTitle=system+" - "+body
             imageText="Lat: "+latitude+"   Lon:"+longitude+"   Head:"+heading+"\n"+str(timestamp_obj)+"\nCommander: "+commander
             inImage = elitePhotoFolder+"\\"+imageFileName
-            outImage = elitePhotoFolder+"\\Converted\\"+imageFileName
+            outImage = elitePhotoFolder+"\\Converted\\"+imageFileName.replace(".bmp",".jpg")
             if os.path.isfile(inImage):
                 convert_image(imageTitle,imageText,inImage,outImage)
