@@ -50,7 +50,10 @@ for file in list_of_files:
             longitude = str(linedata['Longitude']) if 'Longitude' in linedata else ""
             heading = str(linedata['Heading']) if "Heading" in linedata else ""
             imageTitle=system+" - "+body
-            imageText="Lat: "+latitude+"   Lon:"+longitude+"   Head:"+heading+"\n"+str(timestamp_obj)+"\nCommander: "+commander
+            if longitude:
+                imageText="Lat: "+latitude+"   Lon:"+longitude+"   Head:"+heading+"\n"+str(timestamp_obj)+"\nCommander: "+commander
+            else:
+                imageText = str(timestamp_obj)+"\nCommander: "+commander
             inImage = elitePhotoFolder+"\\"+imageFileName
             outImage = elitePhotoFolder+"\\Converted\\"+imageFileName.replace(".bmp",".jpg")
             if os.path.isfile(inImage):
