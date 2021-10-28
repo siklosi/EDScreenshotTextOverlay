@@ -51,7 +51,7 @@ for file in list_of_files:
             heading = str(linedata['Heading']) if "Heading" in linedata else ""
             imageTitle=system+" - "+body
             if longitude:
-                imageText="Lat: "+latitude+"   Lon:"+longitude+"   Head:"+heading+"\n"+str(timestamp_obj)+"\nCommander: "+commander
+                imageText="Latitude: "+latitude+"   Longitude: "+longitude+"   Heading: "+heading+"\n"+str(timestamp_obj)+"\nCommander: "+commander
             else:
                 imageText = str(timestamp_obj)+"\nCommander: "+commander
             inImage = elitePhotoFolder+"\\"+imageFileName
