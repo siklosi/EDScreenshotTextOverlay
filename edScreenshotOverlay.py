@@ -49,7 +49,10 @@ for file in list_of_files:
             latitude = str(linedata['Latitude']) if 'Latitude' in linedata else ""
             longitude = str(linedata['Longitude']) if 'Longitude' in linedata else ""
             heading = str(linedata['Heading']) if "Heading" in linedata else ""
-            imageTitle=system+" - "+body
+            if system==body:
+                imageTitle=system
+            else:
+                imageTitle = system+" - "+body
             if longitude:
                 imageText="Latitude: "+latitude+"   Longitude: "+longitude+"   Heading: "+heading+"\n"+str(timestamp_obj)+"\nCommander: "+commander
             else:
